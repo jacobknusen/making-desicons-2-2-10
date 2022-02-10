@@ -1,5 +1,5 @@
 // For problems 1-2 use the following lines of code:
-var arr = [10,20,30,40,50,60]
+//var arr = [10,20,30,40,50,60]
 
 ////////// PROBLEM 1 //////////
 /*
@@ -7,15 +7,20 @@ var arr = [10,20,30,40,50,60]
 */
 
 //Code Here
+//let firstItem = arr.shift()
+//console.log(firstItem)
 
-
+//let firstItem = arr[0]
+//console.log(firstItem)
+// this well get you the same result, becuase 10 is at index o in the array above. same as .shift()
 ////////// PROBLEM 2 //////////
 /*
   Remove the last item from the 'arr' array and store it in a variable named 'lastItemRemoved'. Console.log the array to verify you no longer have the last item.
 */
 
 //Code Here
-
+ // let lastitemremoved = arr.pop()
+//console.log(lastitemremoved)
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -27,8 +32,9 @@ var family = ['Tyler', 'Jordan', 'Ryan', 'Alice', 'Ireland'];
 */
 
 //Code Here
-
-
+for (let i = 0; i < family.length; i++){
+console.log(family[i])
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -42,6 +48,12 @@ let evensArr = []
 */
 
 //Code Here
+for (i = 0; i < nums.length; i++)
+if (nums[i] % 2 === 0 ){
+  evensArr.push(nums[i])
+  }
+console.log(evensArr)
+
 
 
 
@@ -56,7 +68,17 @@ var score = 74
 */
 
 //Code Here
-
+if (score >= 90 ){
+  console.log('A')
+}else if( score >= 80 && score <= 89 ){
+  console.log('B')
+}else if (score >= 70 && score <= 79){
+  console.log('C')
+}else if ( score >= 60 && score <= 69){
+  console.log('D')
+}else {
+  console.log('you really messed up this time!!!! BIG FAT F ')
+}
 
 ////////// Intermediate Problems //////////
 
@@ -71,15 +93,23 @@ var myFavoriteNumbers = [4,8,12,16,20,24];
 */
 
 //Code Here
+somenum = myFavoriteNumbers[4]
 
-
+console.log(somenum)
 ////////// PROBLEM 7 //////////
 
 // Subscripting (accessing values using their index) an array can fail. What happens if you subscript to the 7th element, but there are not 7 elements in the array? Let's write some code to check for that. 
-// Use an if statement to check the length of the 'myFavoriteNumbers' array. If it's less than 7, log 'There are not enough elements in this array' to the console. If the length is more than 7, reassign the value of 'someNum' to the value of the 7th element in the array. (Hint: how can you make sure that your code works for exactly 7 elements? What index do you use to get the 7th element?)
+// Use an if statement to check the length of the 'myFavoriteNumbers' array. If it's less than 7, log 'There are not enough elements in this array' to the console. If the length is more than 7, 
+//reassign the value of 'someNum' to the value of the 7th element in the array. (Hint: how can you make sure that your code works for exactly 7 elements? What index do you use to get the 7th element?)
 
 //Code Here
-
+if (myFavoriteNumbers.length < 7){
+  console.log('There are not enough elements in this array')
+} else if (myFavoriteNumbers.length >= 7 ){
+  somenum = myFavoriteNumbers[6]
+}
+//its at index 6 becuase its the 7 spot in the aray (myfavoritenumberarray) since there isnt 7 iteams in the array it runs the first code block!
+//
 
 ////////// PROBLEM 8 //////////
 
@@ -90,6 +120,16 @@ var listOfNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
 // Use a for-loop to iterate through 'listOfNumbers', checking to see if each number is divisible by 3. If it is, console.log '{number} is divisible by 3.'
 
 //Code Here
+
+for(i=0; i < listOfNumbers.length; i++)
+  if (listOfNumbers[i] % 3 === 0 ){
+    console.log( listOfNumbers[i],'number is divisible by 3.')
+  }
+
+//for loop is just looping over the array above 
+//the if statment is the logic to see if it can be divide by 3 
+// consle.log listofnumbers[i](which consoles everytime it goes through the for loop and meets are condtions set in the if statement) with a stirng saying what they are.
+
 
 
 ////////// PROBLEM 9 //////////
@@ -102,6 +142,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+for (let i = letters.length -1; i >=0; i--){
+  console.log(letters[i])
+}
+
+//i is equall to letters array length minus 1 
+//which is 5 then we loop backwards from 5 until we get to greater than or equal to 0 
+//
 
 
 ////////// Advanced Problems //////////
@@ -124,13 +171,35 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
+switch(letterGrade)
+{
+  
+  case "A" :
+    console.log("this student is doing excellently.")
+  break 
+  case "B" :
+    console.log('this student is doing well')
 
+  case "C" :
+      console.log("this student is doing alright.")
+  break
+
+   case "D" : 
+       console.log("this student is not doing very well.")
+   break 
+
+   case "F" : 
+       console.log("this student is failing.")
+   break
+
+   default : console.log("Not an eligable grade.")
+}
 
 
 ////////// PROBLEM 11 //////////
 /* The famous FizzBuzz, Devmountain style!
-  Create a for loop that iterates from 1 to 100. In this for loop, using some conditional logic, if the number your for loop is currently on is divisible by 3, console.log 'Dev'. If the number is divisible by 5, console.log 'mountain'. If the number is divisible by 5 & 3, console.log 'Devmountain'. If the number is not divisible by 5 or 3, console.log the number itself. Hint: Look up the modulo operator.
-
+  Create a for loop that iterates from 1 to 100. In this for loop, using some conditional logic, if the number your for loop is currently on is divisible by 3, console.log 'Dev'. If the number is divisible by 5,
+   console.log 'mountain'. If the number is divisible by 5 & 3, console.log 'Devmountain'. If the number is not divisible by 5 or 3, console.log the number itself. Hint: Look up the modulo operator.
   Your output should look like:
   1
   2
@@ -152,3 +221,13 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
+for(let i = 0; i <=100; i++){
+  if(i % 3 === 0 ){
+    console.log('dev')
+  }else if (i % 5 === 0 ){
+    console.log('mtn')
+  }else if ( i % 3 === 0&& i % 5 === 0 ){
+    console.log('devmtn')
+  }else if ( i % 3 !== 0&& i % 5 !== 0 ){
+    console.log(i)}
+}
